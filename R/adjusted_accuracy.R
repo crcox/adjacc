@@ -14,7 +14,14 @@
 #' adjusted_accuracy(y, p)
 adjusted_accuracy <- function(y,p) {
     y <- y > 0
-    p <- p > 0
+    if (min(p) < 0) {
+        # This means p is likely logits
+        p <- p > 0
+
+    } else {
+        # This means p is likely probability
+        p <- p > 0.5
+    }
     HR <- sum(y & p) / sum(y)
     CR <- sum(!y & !p) / sum(!y)
     return( (HR + CR) / 2 )
