@@ -1,0 +1,12 @@
+Package: adjacc
+Type: Package
+Title: Compute Adjusted Accuracy Based on True and Predicted Label
+Version: 0.1.0
+Author: Christopher Cox
+Maintainer: Christopher Cox <chriscox@lsu.edu>
+Description: When evaluating binary classifiers, it is difficult to interpret accuracy when there groups are not of equal size.
+    Adjusted accuracy is computed as the hit rate plus the correct rejection rate divided by two. Because each of the terms in the numerator are scaled by the size of the each group, random performance is always associated with 0.5.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
